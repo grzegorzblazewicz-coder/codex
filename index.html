@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FishWise — Smarter Fishing Trips</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>🎣 FishWise</h1>
+      <p>Plan smarter trips, pick better gear, and track what actually catches fish.</p>
+    </header>
+
+    <main class="grid">
+      <section class="card" aria-labelledby="conditions-heading">
+        <h2 id="conditions-heading">Current Fishing Conditions</h2>
+        <form id="conditions-form" class="stack">
+          <label>
+            Location
+            <input id="location" type="text" placeholder="Lake, river, bay..." required />
+          </label>
+          <label>
+            Water temperature (°F)
+            <input id="waterTemp" type="number" min="32" max="100" required />
+          </label>
+          <label>
+            Wind speed (mph)
+            <input id="wind" type="number" min="0" max="60" required />
+          </label>
+          <label>
+            Sky condition
+            <select id="sky" required>
+              <option value="">Select one</option>
+              <option value="clear">Clear</option>
+              <option value="partly-cloudy">Partly Cloudy</option>
+              <option value="overcast">Overcast</option>
+              <option value="rain">Rain</option>
+            </select>
+          </label>
+          <button type="submit">Analyze Conditions</button>
+        </form>
+        <p id="conditions-result" class="result" aria-live="polite"></p>
+      </section>
+
+      <section class="card" aria-labelledby="gear-heading">
+        <h2 id="gear-heading">Gear Recommender</h2>
+        <form id="gear-form" class="stack">
+          <label>
+            Target species
+            <select id="species" required>
+              <option value="">Select species</option>
+              <option value="bass">Bass</option>
+              <option value="trout">Trout</option>
+              <option value="walleye">Walleye</option>
+              <option value="catfish">Catfish</option>
+            </select>
+          </label>
+          <label>
+            Time of day
+            <select id="time" required>
+              <option value="">Select time</option>
+              <option value="dawn">Dawn</option>
+              <option value="day">Day</option>
+              <option value="dusk">Dusk</option>
+              <option value="night">Night</option>
+            </select>
+          </label>
+          <button type="submit">Get Tackle Tips</button>
+        </form>
+        <p id="gear-result" class="result" aria-live="polite"></p>
+      </section>
+
+      <section class="card" aria-labelledby="forecast-heading">
+        <h2 id="forecast-heading">Bite Forecast</h2>
+        <ul id="forecast-list" class="forecast-list"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="log-heading">
+        <h2 id="log-heading">Trip Log</h2>
+        <form id="log-form" class="stack">
+          <label>
+            Date
+            <input id="tripDate" type="date" required />
+          </label>
+          <label>
+            Spot
+            <input id="spot" type="text" required />
+          </label>
+          <label>
+            Species caught
+            <input id="caughtSpecies" type="text" placeholder="e.g., Bass" required />
+          </label>
+          <label>
+            Productive lure/bait
+            <input id="lure" type="text" required />
+          </label>
+          <button type="submit">Save Trip</button>
+        </form>
+        <ul id="trip-list" class="trip-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <small>FishWise gives practical guidance based on your inputs. Always follow local fishing regulations.</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
