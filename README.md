@@ -25,6 +25,34 @@ Then open:
 - <http://localhost:8000>
 - or <http://127.0.0.1:8000>
 
+## Put it online quickly
+
+This repo includes both `netlify.toml` and `vercel.json` for static deployment.
+
+### Option A: Netlify (fastest)
+1. Push this folder to a GitHub repo.
+2. In Netlify, click **Add new site** → **Import an existing project**.
+3. Select your repo.
+4. Build settings:
+   - Build command: *(leave empty)*
+   - Publish directory: `.`
+5. Click **Deploy site**.
+
+Netlify will give you a public URL like:
+`https://your-site-name.netlify.app`
+
+### Option B: Vercel
+1. Push this folder to a GitHub repo.
+2. In Vercel, click **Add New...** → **Project**.
+3. Import your repo.
+4. Framework preset: **Other**.
+5. Build command: *(leave empty)*.
+6. Output directory: *(leave empty)*.
+7. Click **Deploy**.
+
+Vercel will give you a public URL like:
+`https://your-project.vercel.app`
+
 ## How to check the app works
 
 ### 1) Conditions analyzer
