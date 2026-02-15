@@ -3,51 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FishWise — Smarter Fishing Trips</title>
+    <title>FishWise</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
+    <main class="app">
       <h1>🎣 FishWise</h1>
-      <p>Plan smarter trips, pick better gear, and track what actually catches fish.</p>
-    </header>
+      <p class="subtitle">Simple tools to plan and track fishing trips.</p>
 
-    <main class="grid">
-      <section class="card" aria-labelledby="conditions-heading">
-        <h2 id="conditions-heading">Current Fishing Conditions</h2>
+      <section class="panel" aria-labelledby="conditions-heading">
+        <h2 id="conditions-heading">Conditions</h2>
         <form id="conditions-form" class="stack">
           <label>
             Location
             <input id="location" type="text" placeholder="Lake, river, bay..." required />
           </label>
           <label>
-            Water temperature (°F)
+            Water temp (°F)
             <input id="waterTemp" type="number" min="32" max="100" required />
           </label>
           <label>
-            Wind speed (mph)
+            Wind (mph)
             <input id="wind" type="number" min="0" max="60" required />
           </label>
           <label>
-            Sky condition
+            Sky
             <select id="sky" required>
               <option value="">Select one</option>
               <option value="clear">Clear</option>
-              <option value="partly-cloudy">Partly Cloudy</option>
+              <option value="partly-cloudy">Partly cloudy</option>
               <option value="overcast">Overcast</option>
               <option value="rain">Rain</option>
             </select>
           </label>
-          <button type="submit">Analyze Conditions</button>
+          <button type="submit">Analyze</button>
         </form>
         <p id="conditions-result" class="result" aria-live="polite"></p>
       </section>
 
-      <section class="card" aria-labelledby="gear-heading">
-        <h2 id="gear-heading">Gear Recommender</h2>
+      <section class="panel" aria-labelledby="gear-heading">
+        <h2 id="gear-heading">Gear Tips</h2>
         <form id="gear-form" class="stack">
           <label>
-            Target species
+            Species
             <select id="species" required>
               <option value="">Select species</option>
               <option value="bass">Bass</option>
@@ -57,7 +55,7 @@
             </select>
           </label>
           <label>
-            Time of day
+            Time
             <select id="time" required>
               <option value="">Select time</option>
               <option value="dawn">Dawn</option>
@@ -66,17 +64,17 @@
               <option value="night">Night</option>
             </select>
           </label>
-          <button type="submit">Get Tackle Tips</button>
+          <button type="submit">Show tips</button>
         </form>
         <p id="gear-result" class="result" aria-live="polite"></p>
       </section>
 
-      <section class="card" aria-labelledby="forecast-heading">
+      <section class="panel" aria-labelledby="forecast-heading">
         <h2 id="forecast-heading">Bite Forecast</h2>
-        <ul id="forecast-list" class="forecast-list"></ul>
+        <ul id="forecast-list" class="list"></ul>
       </section>
 
-      <section class="card" aria-labelledby="log-heading">
+      <section class="panel" aria-labelledby="log-heading">
         <h2 id="log-heading">Trip Log</h2>
         <form id="log-form" class="stack">
           <label>
@@ -88,22 +86,18 @@
             <input id="spot" type="text" required />
           </label>
           <label>
-            Species caught
+            Caught
             <input id="caughtSpecies" type="text" placeholder="e.g., Bass" required />
           </label>
           <label>
-            Productive lure/bait
+            Lure/Bait
             <input id="lure" type="text" required />
           </label>
-          <button type="submit">Save Trip</button>
+          <button type="submit">Save trip</button>
         </form>
-        <ul id="trip-list" class="trip-list"></ul>
+        <ul id="trip-list" class="list"></ul>
       </section>
     </main>
-
-    <footer>
-      <small>FishWise gives practical guidance based on your inputs. Always follow local fishing regulations.</small>
-    </footer>
 
     <script src="app.js"></script>
   </body>
